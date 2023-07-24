@@ -1,21 +1,18 @@
 import { useState } from "react";
 
-const SplitComponent = ({ className = "relative" }: { className?: string }) => {
+const SplitComponent = () => {
   const [split, setSplit] = useState(false);
 
-  // const containerStyle = 'w-[calc(50%-4px)] pt-[calc(50%-4px)]';
-  const containerStyle = "w-[49%] pt-[49%]";
-
   return split ? (
-    <div className={`${className} ${containerStyle}`}>
-      <SplitComponent className={"absolute top-0 left-0"} />
-      <SplitComponent className={"absolute top-0 right-0"} />
-      <SplitComponent className={"absolute bottom-0 left-0"} />
-      <SplitComponent className={"absolute bottom-0 right-0"} />
+    <div className="grid grid-rows-2 grid-cols-2 w-full h-full">
+      <SplitComponent />
+      <SplitComponent />
+      <SplitComponent />
+      <SplitComponent />
     </div>
   ) : (
     <div
-      className={`bg-[#f00] rounded-full ${className} ${containerStyle}`}
+      className="bg-[#f00] rounded-full aspect-square w-[40%] m-auto"
       onClick={() => setSplit(true)}
     ></div>
   );
