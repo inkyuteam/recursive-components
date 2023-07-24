@@ -5,7 +5,7 @@ import SplitComponent from "./components/SplitComponent";
 
 function App() {
   return (
-    <div className="container">
+    <div className="flex justify-center items-center h-screen w-full">
       <SplitComponent />
     </div>
   );
